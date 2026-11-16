@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://b3i2ddciouh8n"]
+
+[ext_resource type="Texture2D" uid="uid://cotp8sdlbqyg8" path="res://backgrounds/ICDMlo.png" id="1_epypp"]
+[ext_resource type="Texture2D" uid="uid://ds6fhmsnar8x7" path="res://scenes/14-shading.png" id="2_epypp"]
+[ext_resource type="Script" uid="uid://b7jwhlr6tpen1" path="res://character_body_2d.gd" id="3_0hol4"]
+[ext_resource type="Texture2D" uid="uid://cwg1igt6b0ql2" path="res://backgrounds/chao de grama.jpg" id="4_0hol4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_va61t"]
+size = Vector2(2297, 70.99988)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2qlsl"]
+radius = 34.0
+height = 206.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blh1c"]
+size = Vector2(14, 608)
+
+[node name="Node2D" type="Node2D" unique_id=132332652]
+
+[node name="cenario2" type="Sprite2D" parent="." unique_id=163860234]
+position = Vector2(1710, 323)
+scale = Vector2(1.111328, 1.1145834)
+texture = ExtResource("1_epypp")
+
+[node name="cenario 1" type="Sprite2D" parent="." unique_id=981275879]
+position = Vector2(578.99994, 319)
+scale = Vector2(1.111328, 1.1145834)
+texture = ExtResource("1_epypp")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="cenario 1" unique_id=600130644]
+position = Vector2(-520.9982, -286.20557)
+scale = Vector2(0.8998243, 0.8971962)
+
+[node name="chao de grama" type="Sprite2D" parent="cenario 1/StaticBody2D2" unique_id=850685170]
+position = Vector2(1126.5, 633.5)
+scale = Vector2(2.7190876, 0.48557693)
+texture = ExtResource("4_0hol4")
+
+[node name="collision" type="CollisionShape2D" parent="cenario 1/StaticBody2D2" unique_id=1411269633]
+position = Vector2(1138.4991, 647.4999)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_va61t")
+
+[node name="personagem" type="CharacterBody2D" parent="." unique_id=1420932122]
+position = Vector2(182, 364)
+script = ExtResource("3_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="personagem" unique_id=910369157]
+modulate = Color(0.9163462, 0.16587505, 0.48875225, 1)
+position = Vector2(55, -103)
+scale = Vector2(1, 1.0000001)
+shape = SubResource("CapsuleShape2D_2qlsl")
+
+[node name="personagem" type="Sprite2D" parent="personagem" unique_id=688150623]
+position = Vector2(53.000008, -102)
+scale = Vector2(0.74749994, 0.7916668)
+texture = ExtResource("2_epypp")
+
+[node name="Camera2D" type="Camera2D" parent="personagem" unique_id=1691776107]
+position = Vector2(409, -105)
+limit_left = 14
+limit_top = 5
+limit_right = 2241
+limit_bottom = 676
+limit_smoothed = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1028506389]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1579855766]
+position = Vector2(3.5, 294)
+shape = SubResource("RectangleShape2D_blh1c")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=2006391976]
+position = Vector2(2263, 294)
+shape = SubResource("RectangleShape2D_blh1c")
+debug_color = Color(0.30824777, 0.5059038, 0.96610254, 0.41960785)
