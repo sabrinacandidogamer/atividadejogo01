@@ -8,6 +8,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_va61t"]
 size = Vector2(2297, 70.99988)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qlsl"]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2qlsl"]
 radius = 34.0
 height = 206.0
@@ -40,6 +42,14 @@ texture = ExtResource("4_0hol4")
 position = Vector2(1138.4991, 647.4999)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_va61t")
+
+[node name="personagem 2" type="CharacterBody2D" parent="cenario 1" unique_id=1234684972]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cenario 1/personagem 2" unique_id=753051813]
+shape = SubResource("RectangleShape2D_2qlsl")
+
+[node name="Sprite2D" type="Sprite2D" parent="cenario 1/personagem 2" unique_id=1713265883]
+texture = ExtResource("2_epypp")
 
 [node name="personagem" type="CharacterBody2D" parent="." unique_id=1420932122]
 position = Vector2(182, 364)
